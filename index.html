@@ -176,6 +176,36 @@
       margin-bottom: 1.5rem;
       display: block;
     }
+
+    /* TOC Styles */
+    .toc ul ul {
+      display: none;
+    }
+
+    .toc .expanded > ul {
+      display: block;
+    }
+
+    .toc li {
+      position: relative;
+    }
+
+    .toc .toggle {
+      position: absolute;
+      right: -20px;
+      top: 5px;
+      width: 16px;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      cursor: pointer;
+      color: var(--color-text);
+      transition: transform 0.3s ease;
+    }
+
+    .toc .expanded > .toggle {
+      transform: rotate(90deg);
+    }
   </style>
 </head>
 
@@ -186,6 +216,111 @@
         تعیین کرده‌اند. مسئولیت صحت املایی و اطلاعات این فایل بر عهده من نیست و از هوش مصنوعی برای تهیه آن
         استفاده شده است.</p>
     </blockquote>
+
+    <div class="toc">
+      <h2 style="margin-top: 0; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">فهرست مطالب</h2>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Add toggle buttons to all items with sub-lists
+          const items = document.querySelectorAll('.toc li');
+          items.forEach(item => {
+            if (item.querySelector('ul')) {
+              const toggle = document.createElement('span');
+              toggle.className = 'toggle';
+              toggle.textContent = '▶';
+              item.insertBefore(toggle, item.firstChild);
+              
+              // Add click handler
+              toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                item.classList.toggle('expanded');
+              });
+            }
+          });
+        });
+      </script>
+      <ul style="list-style-type: none; padding: 0; margin: 0;">
+        <li><a href="#_1">راهنمای جامع جغرافیای ایران</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_3">تعریف جغرافیا</a></li>
+            <li><a href="#_4">فنون جغرافیایی</a></li>
+            <li><a href="#_5">انواع جغرافیا</a></li>
+            <li><a href="#_6">مفاهیم اساسی</a></li>
+            <li><a href="#_7">عملکرد انسان با محیط طبیعی</a></li>
+            <li><a href="#_8">دید ترکیبی</a></li>
+            <li><a href="#_9">مراحل پژوهش در جغرافیا</a></li>
+            <li><a href="#_10">موقعیت جغرافیایی</a></li>
+            <li><a href="#_11">نکات مهم</a></li>
+            <li><a href="#_12">ناهمواری‌ها</a></li>
+            <li><a href="#_13">منطقه مکران</a></li>
+            <li><a href="#_14">دشت لوت</a></li>
+            <li><a href="#_15">جلگه‌ها</a></li>
+            <li><a href="#_16">آب و هوا</a></li>
+            <li><a href="#_17">عوامل موثر بر آب و هوا</a></li>
+            <li><a href="#_18">کمربندهای فشار</a></li>
+            <li><a href="#_19">توده‌های هوا</a></li>
+            <li><a href="#_20">ویژگی‌های آب و هوایی</a></li>
+            <li><a href="#_21">دشت کویر</a></li>
+            <li><a href="#_22">جغرافیای پزشکی</a></li>
+            <li><a href="#_23">وارونگی دما</a></li>
+            <li><a href="#_24">کانون‌های آبگیر</a></li>
+            <li><a href="#_25">دریاها</a></li>
+            <li><a href="#_26">دریاچه ارومیه</a></li>
+            <li><a href="#_27">عوامل مؤثر بر پراکندگی جمعیت</a></li>
+            <li><a href="#_28">گروه های سنی</a></li>
+          </ul>
+        </li>
+        <li><a href="#_2">سیاست‌های جمعیتی</a></li>
+        <li><a href="#_3">انواع مهاجرت</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_4">مهاجرت داخلی</a></li>
+            <li><a href="#_5">مهاجرت خارجی</a></li>
+          </ul>
+        </li>
+        <li><a href="#_6">تاریخ و تقسیمات کشوری</a></li>
+        <li><a href="#_7">شکل‌گیری سکونتگاه‌ها</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_8">شهر باستانی بیشاپور</a></li>
+          </ul>
+        </li>
+        <li><a href="#_9">ویژگی‌های سکونتگاه‌ها</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_10">ویژگی‌های روستا</a></li>
+            <li><a href="#_11">ویژگی‌های شهر</a></li>
+          </ul>
+        </li>
+        <li><a href="#_12">انواع شهرها</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_13">تعریف شهر</a></li>
+            <li><a href="#_14">شهر شعاعی یا ستاره‌ای</a></li>
+            <li><a href="#_15">شهرهای خطی</a></li>
+            <li><a href="#_16">شهرگریزی</a></li>
+          </ul>
+        </li>
+        <li><a href="#_17">اقتصاد و توسعه</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_18">توان‌های محیطی</a></li>
+          </ul>
+        </li>
+        <li><a href="#_19">صنایع مهم ایران</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_20">باغداری</a></li>
+            <li><a href="#_21">صنایع دامی و غذایی</a></li>
+            <li><a href="#_22">صنایع دستی</a></li>
+            <li><a href="#_23">صنایع ماشینی</a></li>
+            <li><a href="#_24">صنعت خودروسازی</a></li>
+            <li><a href="#_25">صنایع دفاعی</a></li>
+            <li><a href="#_26">صنایع معدنی</a></li>
+          </ul>
+        </li>
+        <li><a href="#_27">زیربنای توسعه اقتصادی</a></li>
+        <li><a href="#_28">آموزش و پرورش</a>
+          <ul style="list-style-type: none; padding-right: 1.5rem; margin: 0.5rem 0; border-right: 2px solid #e5e7eb;">
+            <li><a href="#_29">رسالت آموزش و پرورش</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
     <h1 id="_1">راهنمای جامع جغرافیای ایران</h1>
     <h3 id="_3">تعریف جغرافیا</h3>
     <p>واژه جغرافیا، که برای اولین بار توسط <strong>اراتوستن</strong> <em>(Eratosthenes)</em> دانشمند یونانی ارائه
